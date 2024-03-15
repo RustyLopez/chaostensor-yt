@@ -1,0 +1,19 @@
+{
+  "name": "lesson-1-short-circuits",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/RustyLopez/chaostensor-yt.git"
+  },
+  "author": "Rusty Lopez",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/RustyLopez/chaostensor-yt/issues"
+  },
+  "homepage": "https://github.com/RustyLopez/chaostensor-yt#readme"
+}
