@@ -4,7 +4,15 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "build": "tsc",
+    "fix": "gts fix",
+    "compile": "tsc",
+    "prepare": "npm.cmd run compile",
+    "pretest": "npm.cmd run compile",
+    "posttest": "npm.cmd run lint"
   },
   "repository": {
     "type": "git",
@@ -15,5 +23,10 @@
   "bugs": {
     "url": "https://github.com/RustyLopez/chaostensor-yt/issues"
   },
-  "homepage": "https://github.com/RustyLopez/chaostensor-yt#readme"
+  "homepage": "https://github.com/RustyLopez/chaostensor-yt#readme",
+  "devDependencies": {
+    "@types/node": "20.8.2",
+    "gts": "^5.2.0",
+    "typescript": "~5.2.0"
+  }
 }
