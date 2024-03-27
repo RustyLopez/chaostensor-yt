@@ -14,6 +14,7 @@
 /**
  * What is a behavior modifier, if not a just a way to hide your methods from the compiler and other engineers.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function opaqueMethodsAAndAWithSecret(
   favoriteColor: string,
   hiddenSecretyActualMethodSelector: boolean
@@ -31,10 +32,11 @@ function opaqueMethodsAAndAWithSecret(
 
 // Rather, declare the distinct behaviors, with distinct methods.
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function declarativeMethodA(favoriteColor: string) {
   console.log(favoriteColor);
 }
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function declarativeMethodAWithSecret(favoriteColor: string) {
   console.log(favoriteColor + '.secret');
 }
