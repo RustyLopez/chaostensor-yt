@@ -172,7 +172,7 @@ methodProcessingDeclarativePolymorphic({
   shapeOrColor: ShapeOrColor.shape,
   shapeName: 'square',
   /**
-   * NOTE that we now get a proper compile error! It'ss clear that for a shape, we need to provide the extra detail
+   * NOTE that we now get a proper compile error! It's clear that for a shape, we need to provide the extra detail
    */
 });
 
