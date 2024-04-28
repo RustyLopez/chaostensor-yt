@@ -17,7 +17,8 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function opaqueMethodsAAndAWithSecret(
   favoriteColor: string,
-  hiddenSecretyActualMethodSelector: boolean
+  hiddenSecretyActualMethodSelector: boolean,
+  x: number
 ) {
   /**
    * Note how these branches, at compile time, appear to now apply to all callers, even though the caller will always select exactly one pathway at runtime.
@@ -177,8 +178,8 @@ methodProcessingDeclarativePolymorphic({
 });
 
 /////////////// NOTE this applies to ANY CONTRACT and ANY INTERFACE
-// Protocols
-// Database Schema
+// Pr
+// Database Schema 
 // Swagger API Definitions
 // Command Line Interfaces
 // USER INTERFACES
