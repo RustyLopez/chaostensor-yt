@@ -1,5 +1,5 @@
 export enum EPolymorphicShape {
-  Square,
+  Rectangle,
   Circle,
 }
 
@@ -13,7 +13,7 @@ export const CPolymorphicShape: Array<
    * Important that we are iterating over the keys. The values of an enum are typically numbers.
    */
   keyof typeof EPolymorphicShape
-> = ['Square', 'Circle'];
+> = ['Rectangle', 'Circle'];
 
 export interface IPolymorphicShape {
   shapeDesignator: keyof typeof EPolymorphicShape;
@@ -22,12 +22,12 @@ export interface IPolymorphicShape {
 }
 
 export interface VPolymorphicShape<T> {
-  visitSquare: (shape: SPolymorphicShapeSquare) => T;
+  visitSquare: (shape: SPolymorphicShapeRectangle) => T;
   visitCircle: (shape: SPolymorphicShapeCircle) => T;
 }
 
-export interface SPolymorphicShapeSquare extends IPolymorphicShape {
-  shapeDesignator: 'Square';
+export interface SPolymorphicShapeRectangle extends IPolymorphicShape {
+  shapeDesignator: 'Rectangle';
   halfWidth: number;
   halfHeight: number;
 }
@@ -44,7 +44,7 @@ export interface SPolymorphicShapeCircle extends IPolymorphicShape {
  * I like to re-declare the interface here so I can use the type union exclusively, and ensure that any inherited obligation declared on the interface is available to any consumers of the type union. Declaring the "&" here, means that I don't have to do it everywhere else. I can just pass around "UPolymorphicShape"
  */
 export type UPolymorphicShape = IPolymorphicShape &
-  (SPolymorphicShapeSquare | SPolymorphicShapeCircle);
+  (SPolymorphicShapeRectangle | SPolymorphicShapeCircle);
 
 export function getWidthX2(shape: UPolymorphicShape): number {
   return shape.getWidth() * 2;
@@ -52,7 +52,7 @@ export function getWidthX2(shape: UPolymorphicShape): number {
 
 export function printInfo(shape: UPolymorphicShape): void {
   switch (shape.shapeDesignator) {
-    case 'Square':
+    case 'Rectangle':
       // No casting needed thanks to type inference.
       console.log(
         `width: ${shape.halfWidth * 2}; height: ${shape.halfHeight * 2}`
@@ -66,7 +66,7 @@ export function printInfo(shape: UPolymorphicShape): void {
 
 export function printInfoUsingPrintingVisitor(shape: UPolymorphicShape): void {
   shape.accept({
-    visitSquare: (shape: SPolymorphicShapeSquare): void => {
+    visitSquare: (shape: SPolymorphicShapeRectangle): void => {
       console.log(
         `width: ${shape.halfWidth * 2}; height: ${shape.halfHeight * 2}`
       );
